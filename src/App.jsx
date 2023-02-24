@@ -1,10 +1,11 @@
 import './App.css'
+import SummonerInput from './components/SummonerComponent/summonerInput'
 
 function App() { 
 
   return (
     <div className='AppContent'>
-      <h1>hola mundo</h1>
+      <SummonerInput/>
     </div>
   )
 }
