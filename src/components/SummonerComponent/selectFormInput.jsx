@@ -7,9 +7,9 @@ export default function SelectFormInput({changeRegion}){
     }
     return(
         <select name="summoner" id="summoner" onChange={handleSelectRegionChange}>            
-            <option value="NA">NA</option>
-            <option value="LAN">LAN</option>
-            <option value="EUW">EUW</option>
+            <option value="na1">NA</option>
+            <option value="la1">LAN</option>
+            <option value="euw1">EUW</option>
         </select>
     )
 }
