@@ -3,10 +3,8 @@ import SummonerInput from './components/SummonerComponent/summonerInput'
 
 function App() { 
 
-  return (
-    <div className='AppContent'>
+  return (    
       <SummonerInput/>
-    </div>
   )
 }
 

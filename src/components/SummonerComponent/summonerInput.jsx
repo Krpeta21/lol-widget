@@ -2,6 +2,7 @@ import SelectFormInput from './selectFormInput';
 import { useState } from 'react';
 import './summonerInput.css'
 import { GetSummonerData } from '../../services/getSummonerData';
+import SummonerMatches from './SummonerMatches';
 
 export default function SummonerInput() {
     const [summonerName,setSummonerName] = useState('')
@@ -23,6 +24,7 @@ export default function SummonerInput() {
   }
 
     return (
+    <>
     <div className='SummonerInput'>
       <img src="/logoLOL.svg" alt="League of Legends LOGO" className='LogoLOL'/>
       <form onSubmit={handleSubmit}>
@@ -30,24 +32,10 @@ export default function SummonerInput() {
         <input type="text" onChange={handleInputChange} value={summonerName}/>
         {/* <button><span className="button_top">Search</span>!</button> */}
       </form>
-      {
-        data.map((gamedata,index)=>(
-          <div key={index}>
-            <h2>Game {index+1}</h2>
-            <div>
-              {
-              gamedata.info.participants.map((data,participantIndex)=>{
-               return (
-                <div key={participantIndex+300}>
-                  <p>Player {participantIndex + 1}: {data.summonerName},KDA: {data.kills} / {data.deaths} / {data.assists} </p>
-                </div>
-               )
-              })
-              }
-            </div>
-          </div>
-        ))
-      }       
     </div>
+    {
+        data ? <SummonerMatches matches={data} /> : <p style={{color: 'white'}}>No se encontro información de este usuario.</p>
+    }
+    </>
   );
 }
