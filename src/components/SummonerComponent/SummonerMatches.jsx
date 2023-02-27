@@ -4,7 +4,7 @@ export default function SummonerMatches ({matches}){
         <div className="SummonerMatches">  {
             matches.map((gamedata,index)=>(
               <div key={index}>
-                <h2>Game {index+1}</h2>
+                <h2>Match {index+1}</h2>
                 <div>
                   {
                   gamedata.info.participants.map((data,participantIndex)=>{
